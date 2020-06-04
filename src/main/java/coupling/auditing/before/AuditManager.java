@@ -54,11 +54,12 @@ public class AuditManager {
 
     private List<File> sortByIndex(Stream<Path> filePaths) {
         return filePaths
-                .map(path -> {
-                    return new File(
-                            path.getFileName().toString().split("_")[1].replaceAll(".txt", ""),
-                            path.toString());
-                })
+                .map(path -> new File(
+                        path.getFileName()
+                                .toString()
+                                .split("_")[1]
+                                .replaceAll(".txt", ""),
+                        path.toString()))
                 .collect(Collectors.toList());
     }
 
