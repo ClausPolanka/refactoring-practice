@@ -29,7 +29,7 @@ public class AuditManager {
             String newRecord = visitorName + ";" + timeOfVisit;
 
             if (files.isEmpty()) {
-                final Path newFilePath = Paths.get(directoryName, "audit_1.txt");
+                Path newFilePath = Paths.get(directoryName, "audit_1.txt");
                 Files.write(newFilePath, newRecord.getBytes());
                 return;
             }
