@@ -64,7 +64,10 @@ public class AuditManager {
     }
 
     public static void main(String[] args) throws IOException {
-        new AuditManager(3, "audits").addRecord("Claus", LocalDateTime.now());
+        int maxEntriesPerFile = 3;
+        String directoryName = "audits";
+        AuditManager am = new AuditManager(maxEntriesPerFile, directoryName);
+        am.addRecord("Claus", LocalDateTime.now());
     }
 
 }
